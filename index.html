@@ -6,48 +6,68 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
   <style>
-    body { margin:0; background:black; font-family:Arial; }
-    #map { height:100vh; }
+    body {
+      margin: 0;
+      background: black;
+      font-family: Arial, sans-serif;
+    }
 
+    #map {
+      height: 100vh;
+      background: black;
+    }
+
+    /* POPUP NEGRO */
     .leaflet-popup-content-wrapper {
-      background:#000 !important;
-      color:#fff !important;
-      border:1px solid #333;
+      background: #000 !important;
+      color: #fff !important;
+      border: 1px solid #333;
     }
 
-    .popup-box { font-size:13px; }
-    .popup-title { font-weight:bold; margin-bottom:6px; }
+    .leaflet-popup-tip {
+      background: #000 !important;
+    }
 
+    .popup-box {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .popup-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    /* ⭐ ESTRELLAS */
     .stars {
-      font-size:22px;
-      color:gold;
-      letter-spacing:3px;
-      display:block;
+      font-size: 22px;
+      color: gold;
+      letter-spacing: 3px;
+      display: block;
+      margin-top: 2px;
     }
 
-    .bar-container {
-      width:100%;
-      height:8px;
-      background:#222;
-      border-radius:5px;
-      margin:4px 0;
-    }
-
-    .bar-fill {
-      height:100%;
-      background:#4caf50;
-    }
-
+    /* OVERLAY */
     #overlay {
-      position:fixed;
-      width:100%;
-      height:100%;
-      background:black;
-      color:white;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: white;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 6px 10px;
+      background: #111;
+      border: 1px solid #444;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -70,12 +90,14 @@ var map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: -4,
   maxZoom: 4,
-  maxBounds: bounds
+  maxBounds: bounds,
+  maxBoundsViscosity: 1.0
 });
 
 L.imageOverlay('mapa.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
+// 🔴 ICONO
 var redIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
   shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
@@ -88,27 +110,16 @@ function estrellas(n){
   return `<span class="stars">${"★".repeat(n)}${"☆".repeat(5-n)}</span>`;
 }
 
-// 📊
-function barra(p){
-  return `
-    <div class="bar-container">
-      <div class="bar-fill" style="width:${p}%"></div>
-    </div>
-    ${p}%
-  `;
-}
-
-// 📦 POPUP
+// 📦 POPUP EXACTO COMO QUIERES
 function crearPopup(l){
   return `
     <div class="popup-box">
       <div class="popup-title">${l.nombre}</div>
 
       ➤ Estado de saqueo:<br>
-      ${barra(l.saqueo)}
+      ${l.saqueo}%<br><br>
 
-      ➤ Descripción:<br>
-      ${l.descripcion}
+      ➤ Descripción: ${l.descripcion}<br><br>
 
       ➤ Dificultad:<br>
       ${estrellas(l.dificultad)}
@@ -119,7 +130,7 @@ function crearPopup(l){
 // ➡️
 function popupFlecha(nombre){
   return `
-    <div>
+    <div class="popup-box">
       <b>${nombre}</b><br>
       <button onclick="abrirOverlay()">Avanzar</button>
     </div>
@@ -129,11 +140,12 @@ function popupFlecha(nombre){
 function abrirOverlay(){
   document.getElementById("overlay").style.display="flex";
 }
+
 function cerrarOverlay(){
   document.getElementById("overlay").style.display="none";
 }
 
-// 🔥 CARGAR JSON
+// 🔥 CARGAR DATOS
 fetch('datos.json')
 .then(r => r.json())
 .then(data => {
