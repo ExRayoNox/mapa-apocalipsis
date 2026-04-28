@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa del Apocalipsis</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <style>
+    body { margin:0; background:black; font-family:Arial; }
+    #map { height:100vh; }
+
+    .leaflet-popup-content-wrapper {
+      background:#000 !important;
+      color:#fff !important;
+      border:1px solid #333;
+    }
+
+    .popup-box { font-size:13px; }
+    .popup-title { font-weight:bold; margin-bottom:6px; }
+
+    .stars {
+      font-size:22px;
+      color:gold;
+      letter-spacing:3px;
+      display:block;
+    }
+
+    .bar-container {
+      width:100%;
+      height:8px;
+      background:#222;
+      border-radius:5px;
+      margin:4px 0;
+    }
+
+    .bar-fill {
+      height:100%;
+      background:#4caf50;
+    }
+
+    #overlay {
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:black;
+      color:white;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<div id="overlay">
+  <h1>NO DISPONIBLE</h1>
+  <button onclick="cerrarOverlay()">Volver</button>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+var bounds = [[-500,-500], [3200,3200]];
+
+var map = L.map('map', {
+  crs: L.CRS.Simple,
+  minZoom: -4,
+  maxZoom: 4,
+  maxBounds: bounds
+});
+
+L.imageOverlay('mapa.png', bounds).addTo(map);
+map.fitBounds(bounds);
+
+var redIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+  shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
+  iconSize: [25,41],
+  iconAnchor: [12,41]
+});
+
+// ⭐
+function estrellas(n){
+  return `<span class="stars">${"★".repeat(n)}${"☆".repeat(5-n)}</span>`;
+}
+
+// 📊
+function barra(p){
+  return `
+    <div class="bar-container">
+      <div class="bar-fill" style="width:${p}%"></div>
+    </div>
+    ${p}%
+  `;
+}
+
+// 📦 POPUP
+function crearPopup(l){
+  return `
+    <div class="popup-box">
+      <div class="popup-title">${l.nombre}</div>
+
+      ➤ Estado de saqueo:<br>
+      ${barra(l.saqueo)}
+
+      ➤ Descripción:<br>
+      ${l.descripcion}
+
+      ➤ Dificultad:<br>
+      ${estrellas(l.dificultad)}
+    </div>
+  `;
+}
+
+// ➡️
+function popupFlecha(nombre){
+  return `
+    <div>
+      <b>${nombre}</b><br>
+      <button onclick="abrirOverlay()">Avanzar</button>
+    </div>
+  `;
+}
+
+function abrirOverlay(){
+  document.getElementById("overlay").style.display="flex";
+}
+function cerrarOverlay(){
+  document.getElementById("overlay").style.display="none";
+}
+
+// 🔥 CARGAR JSON
+fetch('datos.json')
+.then(r => r.json())
+.then(data => {
+
+  data.lugares.forEach(l => {
+    L.marker(l.coords, {icon:redIcon}).addTo(map)
+      .bindPopup(crearPopup(l));
+  });
+
+  data.flechas.forEach(f => {
+    L.marker(f.coords, {icon:redIcon}).addTo(map)
+      .bindPopup(popupFlecha(f.nombre));
+  });
+
+});
+</script>
+
+</body>
+</html>
