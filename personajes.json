@@ -18,11 +18,27 @@
   {
     "id":"sue",
 
-    "nombre":"Sue",
+    "nombre":"Sue Rose",
 
     "especialidad":"Medicina",
 
-    "imagen":"img/sue.png",
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/sue.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0
+  },
+
+  {
+    "id":"kira",
+
+    "nombre":"Kira Nekoyashiki",
+
+    "especialidad":"Boxeo",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/kira.png",
 
     "vitalidad":100,
 
