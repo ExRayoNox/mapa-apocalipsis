@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
   <meta charset="UTF-8">
+
   <title>Horizon Academy</title>
 
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-<div class="main-menu">
+<!-- INTRO -->
+
+<div id="intro">
+
+  <!-- VIDEO -->
+
+  <video id="intro-video"
+  autoplay
+  muted
+  loop
+  playsinline>
+
+    <source
+    src="img/rain.mp4"
+    type="video/mp4">
+
+  </video>
+
+  <!-- OVERLAY OSCURO -->
+
+  <div id="intro-overlay"></div>
+
+  <!-- TEXTO -->
+
+  <div id="intro-text">
+
+    <p class="fade-text">
+      No hubo advertencias.
+    </p>
+
+    <p class="fade-text">
+      No hubo héroes.
+    </p>
+
+    <p class="fade-text">
+      Solo sobrevivientes.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- MENU -->
+
+<div class="main-menu hidden"
+id="mainMenu">
 
   <h1>HORIZON ACADEMY</h1>
 
@@ -22,6 +70,34 @@
   </button>
 
 </div>
+
+<script>
+
+/* DESVANECER INTRO */
+
+setTimeout(() => {
+
+  document
+  .getElementById("intro")
+  .style.opacity = "0";
+
+}, 7000);
+
+/* MOSTRAR MENU */
+
+setTimeout(() => {
+
+  document
+  .getElementById("intro")
+  .style.display = "none";
+
+  document
+  .getElementById("mainMenu")
+  .classList.remove("hidden");
+
+}, 8500);
+
+</script>
 
 </body>
 </html>
