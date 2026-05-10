@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Mapa</title>
+
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <link rel="stylesheet"
+  href="css/style.css">
+
+  <style>
+
+    #map{
+      height:100vh;
+      background:black;
+    }
+
+    .leaflet-popup-content-wrapper{
+      background:#000 !important;
+      color:#fff !important;
+      border:1px solid #333;
+    }
+
+    .leaflet-popup-tip{
+      background:#000 !important;
+    }
+
+    .popup-box{
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .popup-title{
+      font-weight:bold;
+      margin-bottom:6px;
+      font-size:15px;
+    }
+
+    .stars{
+      font-size:22px;
+      color:gold;
+      letter-spacing:3px;
+      display:block;
+      margin-top:2px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<button class="back-btn"
+onclick="location.href='index.html'">
+
+Volver
+
+</button>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+var bounds =
+[[-500,-500],[3200,3200]];
+
+var map = L.map('map', {
+
+  crs:L.CRS.Simple,
+
+  minZoom:-4,
+
+  maxZoom:4,
+
+  maxBounds:bounds,
+
+  maxBoundsViscosity:1.0
+});
+
+L.imageOverlay(
+'mapa.png',
+bounds
+).addTo(map);
+
+map.fitBounds(bounds);
+
+/* ICONO */
+
+var redIcon = new L.Icon({
+
+  iconUrl:
+  'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+
+  shadowUrl:
+  'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
+
+  iconSize:[25,41],
+
+  iconAnchor:[12,41]
+});
+
+/* ESTRELLAS */
+
+function estrellas(n){
+
+  return `
+  
+    <span class="stars">
+
+      ${"★".repeat(n)}
+      ${"☆".repeat(5-n)}
+
+    </span>
+  
+  `;
+}
+
+/* POPUP */
+
+function crearPopup(l){
+
+  return `
+  
+    <div class="popup-box">
+
+      <div class="popup-title">
+        ${l.nombre}
+      </div>
+
+      ➤ Estado de saqueo:<br>
+      ${l.saqueo}%<br><br>
+
+      ➤ Descripción:
+      ${l.descripcion}<br><br>
+
+      ➤ Dificultad:<br>
+
+      ${estrellas(l.dificultad)}
+
+    </div>
+  
+  `;
+}
+
+/* FLECHAS */
+
+function popupFlecha(nombre){
+
+  return `
+  
+    <div class="popup-box">
+
+      <div class="popup-title">
+        ${nombre}
+      </div>
+
+      <button style="
+        background:#111;
+        border:1px solid #444;
+        color:#888;
+        padding:6px 10px;
+        cursor:not-allowed;
+      " disabled>
+
+        No disponible aún
+
+      </button>
+
+    </div>
+  
+  `;
+}
+
+/* CARGAR */
+
+fetch('datos.json')
+
+.then(r => r.json())
+
+.then(data => {
+
+  data.lugares.forEach(l => {
+
+    L.marker(
+      l.coords,
+      {icon:redIcon}
+    )
+
+    .addTo(map)
+
+    .bindPopup(crearPopup(l));
+
+  });
+
+  data.flechas.forEach(f => {
+
+    L.marker(
+      f.coords,
+      {icon:redIcon}
+    )
+
+    .addTo(map)
+
+    .bindPopup(popupFlecha(f.nombre));
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>

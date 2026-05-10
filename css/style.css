@@ -1,0 +1,202 @@
+body{
+  margin:0;
+  background:#000;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+/* MENU */
+
+.main-menu{
+  height:100vh;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:20px;
+}
+
+.main-menu h1{
+  font-size:60px;
+  margin-bottom:20px;
+}
+
+.main-menu button{
+  width:320px;
+
+  padding:20px;
+
+  font-size:22px;
+
+  background:#111;
+
+  color:white;
+
+  border:1px solid #333;
+
+  cursor:pointer;
+
+  transition:0.2s;
+}
+
+.main-menu button:hover{
+  background:#1a1a1a;
+  transform:scale(1.03);
+}
+
+/* PERSONAJES */
+
+.character-grid{
+
+  padding:40px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap:30px;
+}
+
+.character-card{
+
+  background:#111;
+
+  border:1px solid #333;
+
+  border-radius:14px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  transition:0.2s;
+}
+
+.character-card:hover{
+  transform:scale(1.02);
+}
+
+.character-card img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+}
+
+.character-info{
+  padding:20px;
+}
+
+.character-info h2{
+  margin:0;
+  font-size:28px;
+}
+
+.character-info p{
+  color:#aaa;
+  margin-top:5px;
+}
+
+/* PERFIL */
+
+.profile{
+  display:flex;
+
+  gap:40px;
+
+  padding:40px;
+
+  flex-wrap:wrap;
+}
+
+.profile img{
+  width:420px;
+
+  border-radius:14px;
+
+  border:1px solid #333;
+}
+
+.profile-right{
+  flex:1;
+  min-width:300px;
+}
+
+.profile-right h1{
+  font-size:50px;
+  margin-top:0;
+}
+
+.profile-right h3{
+  color:#aaa;
+  font-weight:normal;
+}
+
+/* STATS */
+
+.stat{
+  margin-bottom:25px;
+}
+
+.stat-title{
+  margin-bottom:8px;
+  font-size:20px;
+}
+
+.bar{
+  width:100%;
+  height:28px;
+
+  background:#1a1a1a;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  border:1px solid #333;
+}
+
+.fill{
+  height:100%;
+  border-radius:20px;
+}
+
+/* VIDA */
+
+.health{
+  background:#c62828;
+}
+
+/* SANIDAD */
+
+.sanity{
+  background:#1565c0;
+}
+
+/* INFECCION */
+
+.infection{
+  background:#2e7d32;
+}
+
+/* BOTON */
+
+.back-btn{
+
+  margin:20px;
+
+  padding:12px 20px;
+
+  background:#111;
+
+  color:white;
+
+  border:1px solid #333;
+
+  cursor:pointer;
+
+  font-size:16px;
+}

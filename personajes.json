@@ -1,0 +1,33 @@
+[
+  {
+    "id":"shen",
+
+    "nombre":"Shen Jian",
+
+    "especialidad":"Combate",
+
+    "imagen":"img/shen.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0
+  },
+
+  {
+    "id":"sue",
+
+    "nombre":"Sue",
+
+    "especialidad":"Medicina",
+
+    "imagen":"img/sue.png",
+
+    "vitalidad":85,
+
+    "sanidad":92,
+
+    "infeccion":10
+  }
+]

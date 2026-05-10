@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<button class="back-btn"
+onclick="history.back()">
+
+Volver
+
+</button>
+
+<div id="perfil"></div>
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+fetch("personajes.json")
+.then(r => r.json())
+.then(data => {
+
+  const personaje =
+  data.find(p => p.id === id);
+
+  const perfil =
+  document.getElementById("perfil");
+
+  perfil.innerHTML = `
+  
+    <div class="profile">
+
+      <img src="${personaje.imagen}">
+
+      <div class="profile-right">
+
+        <h1>${personaje.nombre}</h1>
+
+        <h3>${personaje.especialidad}</h3>
+
+        <!-- VIDA -->
+
+        <div class="stat">
+
+          <div class="stat-title">
+            Vitalidad: ${personaje.vitalidad}%
+          </div>
+
+          <div class="bar">
+
+            <div class="fill health"
+            style="width:${personaje.vitalidad}%">
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SANIDAD -->
+
+        <div class="stat">
+
+          <div class="stat-title">
+            Sanidad: ${personaje.sanidad}%
+          </div>
+
+          <div class="bar">
+
+            <div class="fill sanity"
+            style="width:${personaje.sanidad}%">
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- INFECCION -->
+
+        <div class="stat">
+
+          <div class="stat-title">
+            Infección: ${personaje.infeccion}%
+          </div>
+
+          <div class="bar">
+
+            <div class="fill infection"
+            style="width:${personaje.infeccion}%">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  
+  `;
+});
+
+</script>
+
+</body>
+</html>

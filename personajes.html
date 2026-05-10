@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Personajes</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<button class="back-btn"
+onclick="location.href='index.html'">
+
+Volver
+
+</button>
+
+<div class="character-grid" id="grid"></div>
+
+<script>
+
+fetch('personajes.json')
+.then(r => r.json())
+.then(data => {
+
+  const grid =
+  document.getElementById("grid");
+
+  data.forEach(p => {
+
+    grid.innerHTML += `
+    
+      <div class="character-card"
+      onclick="location.href='perfil.html?id=${p.id}'">
+
+        <img src="${p.imagen}">
+
+        <div class="character-info">
+
+          <h2>${p.nombre}</h2>
+
+          <p>${p.especialidad}</p>
+
+        </div>
+
+      </div>
+
+    `;
+  });
+
+});
+
+</script>
+
+</body>
+</html>
