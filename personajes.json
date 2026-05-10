@@ -4,7 +4,7 @@
 
     "nombre":"Shen Jian",
 
-    "especialidad":"Combate",
+    "especialidad":"Fuerzas Especiales",
 
     "imagen":"img/shen.png",
 
@@ -24,10 +24,10 @@
 
     "imagen":"img/sue.png",
 
-    "vitalidad":85,
+    "vitalidad":100,
 
-    "sanidad":92,
+    "sanidad":100,
 
-    "infeccion":10
+    "infeccion":0
   }
 ]
