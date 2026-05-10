@@ -70,7 +70,12 @@ fetch("personajes.json")
   
     <div class="profile">
 
-      <img src="${personaje.imagen}">
+      <div class="profile-image"
+      style="--bg:url('${personaje.imagen}')">
+
+        <img src="${personaje.imagen}">
+
+      </div>
 
       <div class="profile-right">
 
