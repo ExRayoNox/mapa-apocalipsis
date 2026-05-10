@@ -164,7 +164,7 @@ body{
 
   height:100vh;
 
-  display:none;
+  display:flex;
 
   flex-direction:column;
 

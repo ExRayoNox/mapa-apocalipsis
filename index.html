@@ -11,7 +11,7 @@
 
 <body>
 
-<!-- VIDEO FONDO -->
+<!-- VIDEO -->
 
 <video
 id="background-video"
@@ -26,7 +26,7 @@ playsinline>
 
 </video>
 
-<!-- CAPA OSCURA -->
+<!-- OSCURECER -->
 
 <div id="background-overlay"></div>
 
@@ -41,11 +41,11 @@ playsinline>
     </p>
 
     <p class="fade-text">
-      No hubo héroes.
+      Solo caos.
     </p>
 
     <p class="fade-text">
-      Solo sobrevivientes.
+       Y una academia.
     </p>
 
   </div>
@@ -55,7 +55,7 @@ playsinline>
 <!-- MENU -->
 
 <div
-class="main-menu hidden"
+class="main-menu"
 id="mainMenu">
 
   <h1>HORIZON ACADEMY</h1>
@@ -78,6 +78,13 @@ id="mainMenu">
 
 <script>
 
+/* ESCONDER MENU AL INICIO */
+
+const menu =
+document.getElementById("mainMenu");
+
+menu.style.display = "none";
+
 /* DESAPARECER INTRO */
 
 setTimeout(() => {
@@ -91,11 +98,6 @@ setTimeout(() => {
 /* MOSTRAR MENU */
 
 setTimeout(() => {
-
-  const menu =
-  document.getElementById("mainMenu");
-
-  menu.classList.remove("hidden");
 
   menu.style.display = "flex";
 
