@@ -3,7 +3,6 @@
 <head>
 
   <meta charset="UTF-8">
-
   <title>Horizon Academy</title>
 
   <link rel="stylesheet" href="css/style.css">
@@ -14,8 +13,10 @@
 
 <!-- VIDEO FONDO -->
 
-<video id="background-video"
+<video
+id="background-video"
 autoplay
+muted
 loop
 playsinline>
 
@@ -40,11 +41,11 @@ playsinline>
     </p>
 
     <p class="fade-text">
-      Solo caos.
+      No hubo héroes.
     </p>
 
     <p class="fade-text">
-      Y una academia.
+      Solo sobrevivientes.
     </p>
 
   </div>
@@ -53,7 +54,8 @@ playsinline>
 
 <!-- MENU -->
 
-<div class="main-menu hidden"
+<div
+class="main-menu hidden"
 id="mainMenu">
 
   <h1>HORIZON ACADEMY</h1>
@@ -90,9 +92,12 @@ setTimeout(() => {
 
 setTimeout(() => {
 
-  document
-  .getElementById("mainMenu")
-  .classList.remove("hidden");
+  const menu =
+  document.getElementById("mainMenu");
+
+  menu.classList.remove("hidden");
+
+  menu.style.display = "flex";
 
 }, 8500);
 
