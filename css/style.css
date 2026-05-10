@@ -44,8 +44,8 @@ body{
   animation:bgFade 5s forwards;
 
   filter:
-  brightness(0.35)
-  blur(2px);
+    brightness(0.65)
+    blur(1px);
 }
 
 /* OVERLAY */
@@ -59,8 +59,8 @@ body{
   background:
   linear-gradient(
     to bottom,
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.85)
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55)
   );
 
   z-index:1;
