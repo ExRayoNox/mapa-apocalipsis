@@ -12,28 +12,26 @@
 
 <body>
 
-<!-- FONDO / INTRO -->
+<!-- VIDEO FONDO -->
 
-<div id="intro" class="background-layer">
+<video id="background-video"
+autoplay
+loop
+playsinline>
 
-  <!-- VIDEO -->
+  <source
+  src="img/rain.mp4"
+  type="video/mp4">
 
-  <video id="intro-video"
-  autoplay
-  loop
-  playsinline>
+</video>
 
-    <source
-    src="img/rain.mp4"
-    type="video/mp4">
+<!-- CAPA OSCURA -->
 
-  </video>
+<div id="background-overlay"></div>
 
-  <!-- OVERLAY -->
+<!-- INTRO -->
 
-  <div id="intro-overlay"></div>
-
-  <!-- TEXTO INTRO -->
+<div id="intro">
 
   <div id="intro-text">
 
@@ -78,13 +76,13 @@ id="mainMenu">
 
 <script>
 
-/* DESAPARECER TEXTO */
+/* DESAPARECER INTRO */
 
 setTimeout(() => {
 
   document
-  .getElementById("intro-text")
-  .style.opacity = "0";
+  .getElementById("intro")
+  .classList.add("hide-intro");
 
 }, 7000);
 
