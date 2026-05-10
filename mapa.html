@@ -217,7 +217,9 @@ setInterval(
   1000
 );
 
+/* ========================= */
 /* MAPA */
+/* ========================= */
 
 var bounds =
 [[-500,-500],[3200,3200]];
@@ -235,6 +237,8 @@ var map = L.map('map', {
   maxBoundsViscosity:1.0
 });
 
+/* IMAGEN MAPA */
+
 L.imageOverlay(
 'mapa.png',
 bounds
@@ -242,7 +246,9 @@ bounds
 
 map.fitBounds(bounds);
 
+/* ========================= */
 /* ICONO */
+/* ========================= */
 
 var redIcon = new L.Icon({
 
@@ -257,7 +263,9 @@ var redIcon = new L.Icon({
   iconAnchor:[12,41]
 });
 
+/* ========================= */
 /* ESTRELLAS */
+/* ========================= */
 
 function estrellas(n){
 
@@ -273,7 +281,9 @@ function estrellas(n){
   `;
 }
 
+/* ========================= */
 /* POPUP */
+/* ========================= */
 
 function crearPopup(l){
 
@@ -300,7 +310,9 @@ function crearPopup(l){
   `;
 }
 
+/* ========================= */
 /* FLECHAS */
+/* ========================= */
 
 function popupFlecha(nombre){
 
@@ -329,7 +341,9 @@ function popupFlecha(nombre){
   `;
 }
 
+/* ========================= */
 /* CARGAR DATOS */
+/* ========================= */
 
 fetch('datos.json')
 
@@ -337,7 +351,9 @@ fetch('datos.json')
 
 .then(data => {
 
+  /* ========================= */
   /* LUGARES */
+  /* ========================= */
 
   data.lugares.forEach(l => {
 
@@ -351,29 +367,25 @@ fetch('datos.json')
 
     .bindPopup(crearPopup(l));
 
-    /* GLOW */
+    /* HOVER */
 
     marker.on('mouseover', function(){
 
       this._icon.style.filter =
-      "drop-shadow(0 0 10px red)";
-
-      this._icon.style.transform =
-      "scale(1.15)";
+      "drop-shadow(0 0 10px red) brightness(1.2)";
     });
 
     marker.on('mouseout', function(){
 
       this._icon.style.filter =
       "";
-
-      this._icon.style.transform =
-      "";
     });
 
   });
 
+  /* ========================= */
   /* FLECHAS */
+  /* ========================= */
 
   data.flechas.forEach(f => {
 
@@ -387,23 +399,17 @@ fetch('datos.json')
 
     .bindPopup(popupFlecha(f.nombre));
 
-    /* GLOW */
+    /* HOVER */
 
     marker.on('mouseover', function(){
 
       this._icon.style.filter =
-      "drop-shadow(0 0 10px red)";
-
-      this._icon.style.transform =
-      "scale(1.15)";
+      "drop-shadow(0 0 10px red) brightness(1.2)";
     });
 
     marker.on('mouseout', function(){
 
       this._icon.style.filter =
-      "";
-
-      this._icon.style.transform =
       "";
     });
 
