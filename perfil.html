@@ -35,6 +35,37 @@ fetch("personajes.json")
   const perfil =
   document.getElementById("perfil");
 
+  let statsHTML = "";
+
+  for(let stat in personaje.stats){
+
+    let valor = personaje.stats[stat];
+
+    let puntos =
+    "●".repeat(valor) +
+    "○".repeat(10 - valor);
+
+    statsHTML += `
+    
+      <div class="rpg-stat">
+
+        <div class="rpg-top">
+
+          <span>${stat}</span>
+
+          <span>${valor}/10</span>
+
+        </div>
+
+        <div class="rpg-points">
+          ${puntos}
+        </div>
+
+      </div>
+    
+    `;
+  }
+
   perfil.innerHTML = `
   
     <div class="profile">
@@ -100,6 +131,14 @@ fetch("personajes.json")
           </div>
 
         </div>
+
+        <!-- STATS -->
+
+        <h2 style="margin-top:40px;">
+          Estadísticas
+        </h2>
+
+        ${statsHTML}
 
       </div>
 

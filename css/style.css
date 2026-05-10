@@ -135,7 +135,7 @@ body{
   font-weight:normal;
 }
 
-/* STATS */
+/* STATS BARRAS */
 
 .stat{
   margin-bottom:25px;
@@ -199,4 +199,45 @@ body{
   cursor:pointer;
 
   font-size:16px;
+
+  transition:0.2s;
+}
+
+.back-btn:hover{
+  background:#1a1a1a;
+}
+
+/* RPG STATS */
+
+.rpg-stat{
+
+  margin-bottom:20px;
+
+  background:#111;
+
+  padding:15px;
+
+  border-radius:12px;
+
+  border:1px solid #222;
+}
+
+.rpg-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:10px;
+
+  font-size:18px;
+}
+
+.rpg-points{
+
+  font-size:28px;
+
+  letter-spacing:4px;
+
+  color:white;
 }
