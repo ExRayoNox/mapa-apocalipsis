@@ -12,9 +12,9 @@
 
 <body>
 
-<!-- INTRO -->
+<!-- FONDO / INTRO -->
 
-<div id="intro">
+<div id="intro" class="background-layer">
 
   <!-- VIDEO -->
 
@@ -29,11 +29,11 @@
 
   </video>
 
-  <!-- OVERLAY OSCURO -->
+  <!-- OVERLAY -->
 
   <div id="intro-overlay"></div>
 
-  <!-- TEXTO -->
+  <!-- TEXTO INTRO -->
 
   <div id="intro-text">
 
@@ -60,24 +60,30 @@ id="mainMenu">
 
   <h1>HORIZON ACADEMY</h1>
 
-  <button onclick="location.href='personajes.html'">
+  <button
+  onclick="location.href='personajes.html'">
+
     PERSONAJES
+
   </button>
 
-  <button onclick="location.href='mapa.html'">
+  <button
+  onclick="location.href='mapa.html'">
+
     MAPA
+
   </button>
 
 </div>
 
 <script>
 
-/* DESVANECER INTRO */
+/* DESAPARECER TEXTO */
 
 setTimeout(() => {
 
   document
-  .getElementById("intro")
+  .getElementById("intro-text")
   .style.opacity = "0";
 
 }, 7000);
@@ -85,10 +91,6 @@ setTimeout(() => {
 /* MOSTRAR MENU */
 
 setTimeout(() => {
-
-  document
-  .getElementById("intro")
-  .style.display = "none";
 
   document
   .getElementById("mainMenu")

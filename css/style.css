@@ -7,7 +7,7 @@ body{
 }
 
 /* ========================= */
-/* INTRO */
+/* INTRO / FONDO */
 /* ========================= */
 
 #intro{
@@ -16,13 +16,7 @@ body{
 
   inset:0;
 
-  background:black;
-
-  z-index:9999;
-
   overflow:hidden;
-
-  transition:2s;
 }
 
 /* VIDEO */
@@ -44,8 +38,8 @@ body{
   animation:bgFade 5s forwards;
 
   filter:
-    brightness(0.65)
-    blur(1px);
+  brightness(0.65)
+  blur(1px);
 }
 
 /* OVERLAY */
@@ -85,6 +79,8 @@ body{
   align-items:center;
 
   gap:30px;
+
+  transition:2s;
 }
 
 .fade-text{
@@ -112,7 +108,9 @@ body{
   animation-delay:5s;
 }
 
+/* ========================= */
 /* ANIMACIONES */
+/* ========================= */
 
 @keyframes fadeText{
 
@@ -138,7 +136,9 @@ body{
   }
 }
 
+/* ========================= */
 /* HIDDEN */
+/* ========================= */
 
 .hidden{
   display:none;
@@ -149,6 +149,10 @@ body{
 /* ========================= */
 
 .main-menu{
+
+  position:relative;
+
+  z-index:10;
 
   height:100vh;
 
@@ -163,11 +167,9 @@ body{
   gap:20px;
 
   background:
-  linear-gradient(
-    to bottom,
-    #050505,
-    #000
-  );
+  rgba(0,0,0,0.45);
+
+  backdrop-filter:blur(4px);
 }
 
 .main-menu h1{
