@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Comunicaciones</title>
+
+<style>
+
+body{
+
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:Arial,sans-serif;
+
+  display:flex;
+  flex-direction:column;
+
+  height:100vh;
+}
+
+/* HEADER */
+
+#top{
+
+  padding:20px;
+
+  border-bottom:
+  1px solid #222;
+
+  background:#0b0b0b;
+
+  font-size:28px;
+
+  letter-spacing:2px;
+}
+
+/* CHAT */
+
+#chat{
+
+  flex:1;
+
+  overflow-y:auto;
+
+  padding:20px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+}
+
+/* MENSAJE */
+
+.msg{
+
+  background:#111;
+
+  border:1px solid #222;
+
+  padding:12px;
+
+  border-radius:10px;
+
+  word-break:break-word;
+}
+
+.msg b{
+
+  color:#ff4d4d;
+}
+
+/* ENVIAR */
+
+#sendBox{
+
+  display:flex;
+
+  padding:20px;
+
+  gap:10px;
+
+  border-top:
+  1px solid #222;
+
+  background:#0b0b0b;
+}
+
+#msgInput{
+
+  flex:1;
+
+  background:#111;
+
+  border:1px solid #333;
+
+  color:white;
+
+  padding:14px;
+
+  border-radius:10px;
+
+  font-size:16px;
+}
+
+#sendBtn{
+
+  background:#1a1a1a;
+
+  color:white;
+
+  border:1px solid #333;
+
+  padding:14px 20px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+}
+
+#sendBtn:hover{
+
+  background:#252525;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="top">
+
+COMUNICACIONES
+
+</div>
+
+<div id="chat"></div>
+
+<div id="sendBox">
+
+<input
+id="msgInput"
+maxlength="120"
+placeholder="Escribe un mensaje...">
+
+<button id="sendBtn">
+
+Enviar
+
+</button>
+
+</div>
+
+<script type="module">
+
+/* FIREBASE */
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* TU CONFIG */
+
+const firebaseConfig = {
+
+  apiKey: "TU API KEY",
+
+  authDomain: "TU AUTH DOMAIN",
+
+  projectId: "TU PROJECT ID",
+
+  storageBucket: "TU STORAGE",
+
+  messagingSenderId: "TU SENDER ID",
+
+  appId: "TU APP ID"
+
+};
+
+/* INICIAR */
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+/* NOMBRE */
+
+let nombre =
+localStorage.getItem("nombre");
+
+if(!nombre){
+
+  nombre =
+  prompt("Ingresa tu nombre");
+
+  if(!nombre){
+
+    nombre = "Desconocido";
+  }
+
+  localStorage.setItem(
+    "nombre",
+    nombre
+  );
+}
+
+/* ELEMENTOS */
+
+const chat =
+document.getElementById("chat");
+
+const input =
+document.getElementById("msgInput");
+
+const sendBtn =
+document.getElementById("sendBtn");
+
+/* ENVIAR */
+
+sendBtn.onclick =
+async () => {
+
+  const texto =
+  input.value.trim();
+
+  if(texto === "")
+  return;
+
+  await addDoc(
+
+    collection(db,"mensajes"),
+
+    {
+
+      usuario:nombre,
+
+      mensaje:texto,
+
+      tiempo:Date.now()
+
+    }
+
+  );
+
+  input.value = "";
+};
+
+/* ENTER */
+
+input.addEventListener(
+"keypress",
+(e) => {
+
+  if(e.key === "Enter"){
+
+    sendBtn.click();
+  }
+});
+
+/* CARGAR MENSAJES */
+
+const q =
+query(
+
+  collection(db,"mensajes"),
+
+  orderBy("tiempo")
+
+);
+
+onSnapshot(q, (snapshot) => {
+
+  chat.innerHTML = "";
+
+  snapshot.forEach((doc) => {
+
+    const data =
+    doc.data();
+
+    chat.innerHTML += `
+    
+      <div class="msg">
+
+        <b>[${data.usuario}]</b>
+
+        ${data.mensaje}
+
+      </div>
+    
+    `;
+  });
+
+  chat.scrollTop =
+  chat.scrollHeight;
+});
+
+</script>
+
+</body>
+</html>
