@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Terminal</title>
+
+<style>
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body{
+
+  margin:0;
+
+  background:#050505;
+
+  color:#d8d8d8;
+
+  font-family:Consolas, monospace;
+
+  overflow:hidden;
+}
+
+/* ========================= */
+/* TERMINAL */
+/* ========================= */
+
+#terminal{
+
+  padding:25px;
+
+  height:100vh;
+
+  overflow-y:auto;
+
+  box-sizing:border-box;
+}
+
+/* TEXTO */
+
+.line{
+
+  margin-bottom:10px;
+
+  white-space:pre-wrap;
+
+  line-height:1.5;
+}
+
+/* INPUT */
+
+#input-line{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+}
+
+#command{
+
+  background:none;
+
+  border:none;
+
+  outline:none;
+
+  color:white;
+
+  font-family:Consolas, monospace;
+
+  font-size:16px;
+
+  width:100%;
+}
+
+/* CURSOR */
+
+.cursor{
+
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+  50%{
+    opacity:0;
+  }
+}
+
+/* SCANLINES */
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  repeating-linear-gradient(
+
+    to bottom,
+
+    rgba(255,255,255,0.02),
+
+    rgba(255,255,255,0.02) 1px,
+
+    transparent 1px,
+
+    transparent 3px
+  );
+
+  pointer-events:none;
+}
+
+/* GLOW */
+
+body{
+
+  text-shadow:
+  0 0 4px rgba(255,255,255,0.08);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="terminal">
+
+  <div class="line">
+
+HORIZON ACADEMY INTERNAL NETWORK
+v2.4.7
+
+Type "help" for available commands.
+
+  </div>
+
+  <div id="output"></div>
+
+  <div id="input-line">
+
+    <span>></span>
+
+    <input
+    type="text"
+    id="command"
+    autofocus>
+
+  </div>
+
+</div>
+
+<script>
+
+/* ========================= */
+/* ELEMENTOS */
+/* ========================= */
+
+const commandInput =
+document.getElementById("command");
+
+const output =
+document.getElementById("output");
+
+/* ========================= */
+/* RESPUESTA */
+/* ========================= */
+
+function print(text){
+
+  const div =
+  document.createElement("div");
+
+  div.className = "line";
+
+  div.innerText = text;
+
+  output.appendChild(div);
+
+  window.scrollTo(
+    0,
+    document.body.scrollHeight
+  );
+}
+
+/* ========================= */
+/* COMANDOS */
+/* ========================= */
+
+const comandos = {
+
+  help:`
+
+AVAILABLE COMMANDS
+
+help
+clear
+estado
+alumnos
+mapa
+archivos
+
+  `,
+
+  estado:`
+
+SYSTEM STATUS
+
+ENERGY: STABLE
+COMMUNICATIONS: OFFLINE
+SECURITY LEVEL: LOW
+WEATHER: CLEAR
+
+  `,
+
+  alumnos:`
+
+REGISTERED STUDENTS
+
+- Shen Jian
+- Sue Rose
+- Kira Nekoyashiki
+
+  `,
+
+  archivos:`
+
+AVAILABLE FILES
+
+expediente_shen
+expediente_sue
+expediente_kira
+
+  `,
+
+  expediente_shen:`
+
+SHEN JIAN
+
+SPECIALTY:
+Special Forces
+
+STATUS:
+ACTIVE
+
+MENTAL STATE:
+STABLE
+
+  `,
+
+  expediente_sue:`
+
+SUE ROSE
+
+SPECIALTY:
+Medicine
+
+STATUS:
+ACTIVE
+
+MENTAL STATE:
+UNSTABLE
+
+  `,
+
+  expediente_kira:`
+
+KIRA NEKOYASHIKI
+
+SPECIALTY:
+Boxing
+
+STATUS:
+ACTIVE
+
+MENTAL STATE:
+STABLE
+
+  `
+};
+
+/* ========================= */
+/* ENTER */
+/* ========================= */
+
+commandInput.addEventListener(
+"keydown",
+function(e){
+
+  if(e.key === "Enter"){
+
+    const cmd =
+    commandInput.value
+    .trim()
+    .toLowerCase();
+
+    print("> " + cmd);
+
+    if(cmd === "clear"){
+
+      output.innerHTML = "";
+
+    }
+
+    else if(cmd === "mapa"){
+
+      window.location.href =
+      "mapa.html";
+    }
+
+    else if(comandos[cmd]){
+
+      print(comandos[cmd]);
+    }
+
+    else{
+
+      print(
+      "UNKNOWN COMMAND");
+    }
+
+    commandInput.value = "";
+  }
+});
+
+</script>
+
+</body>
+</html>
