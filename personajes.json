@@ -72,5 +72,30 @@
       "Destreza":6,
       "Constitucion":8
     }
+  },
+
+  {
+    "id":"Damian",
+
+    "nombre":"Damián Edwards",
+
+    "especialidad":"Agricultura",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Damian.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":3,
+      "Agudeza":7,
+      "Cordura":4,
+      "Fuerza":6,
+      "Destreza":7,
+      "Constitucion":8
+    }
   }
 ]
