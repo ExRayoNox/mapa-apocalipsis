@@ -238,9 +238,40 @@ body{
   display:grid;
 
   grid-template-columns:
-  repeat(auto-fit,minmax(300px,1fr));
+  repeat(4, 1fr);
 
   gap:30px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1400px){
+
+  .character-grid{
+
+    grid-template-columns:
+    repeat(3,1fr);
+  }
+}
+
+@media(max-width:1000px){
+
+  .character-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px){
+
+  .character-grid{
+
+    grid-template-columns:
+    repeat(1,1fr);
+  }
 }
 
 .character-card{

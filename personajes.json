@@ -97,5 +97,205 @@
       "Destreza":7,
       "Constitucion":8
     }
+  },
+
+  {
+    "id":"Jannet",
+
+    "nombre":"Jannet Blanchett",
+
+    "especialidad":"Animacion",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Jannet.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":3,
+      "Agudeza":6,
+      "Cordura":8,
+      "Fuerza":4,
+      "Destreza":8,
+      "Constitucion":6
+    }
+  },
+
+  {
+    "id":"Xue",
+
+    "nombre":"Xue Hua",
+
+    "especialidad":"Francotirador",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Xue.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":3,
+      "Cordura":8,
+      "Fuerza":6,
+      "Destreza":5,
+      "Constitucion":5
+    }
+  },
+
+  {
+    "id":"Evangeline",
+
+    "nombre":"Evangeline Solaris",
+
+    "especialidad":"Inventora",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Eva.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":5,
+      "Cordura":5,
+      "Fuerza":4,
+      "Destreza":8,
+      "Constitucion":5
+    }
+  },
+
+  {
+    "id":"Ilios",
+
+    "nombre":"Ilios Selini",
+
+    "especialidad":"Energías renovables y medio ambiente",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Ilios.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":10,
+      "Agudeza":6,
+      "Cordura":4,
+      "Fuerza":6,
+      "Destreza":5,
+      "Constitucion":4
+    }
+  },
+
+  {
+    "id":"Hallie",
+
+    "nombre":"Celina Riva",
+
+    "especialidad":"Mercenaria y logistica",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Celina.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":6,
+      "Agudeza":7,
+      "Cordura":5,
+      "Fuerza":5,
+      "Destreza":5,
+      "Constitucion":5
+    }
+  },
+
+  {
+    "id":"Nathan",
+
+    "nombre":"Nathan Porsche",
+
+    "especialidad":"Mecánica",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Nathan.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":10,
+      "Agudeza":1,
+      "Cordura":6,
+      "Fuerza":7,
+      "Destreza":7,
+      "Constitucion":4
+    }
+  },
+
+  {
+    "id":"Hallie",
+
+    "nombre":"Hallie Björnsson",
+
+    "especialidad":"Enfermeria",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Hallie.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":7,
+      "Agudeza":6,
+      "Cordura":6,
+      "Fuerza":5,
+      "Destreza":6,
+      "Constitucion":5
+    }
+  },
+
+  {
+    "id":"Vesper",
+
+    "nombre":"Vesper Blackwell",
+
+    "especialidad":"Cientifico",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Vesper.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":6,
+      "Cordura":5,
+      "Fuerza":5,
+      "Destreza":5,
+      "Constitucion":6
+    }
   }
 ]
