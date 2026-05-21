@@ -297,5 +297,30 @@
       "Destreza":5,
       "Constitucion":6
     }
+  },
+
+  {
+    "id":"Nico",
+
+    "nombre":"Nico Debonair",
+
+    "especialidad":"Pedagogía en educación física",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Nico.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":4,
+      "Agudeza":5,
+      "Cordura":10,
+      "Fuerza":6,
+      "Destreza":7,
+      "Constitucion":5
+    }
   }
 ]
