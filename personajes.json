@@ -322,5 +322,105 @@
       "Destreza":7,
       "Constitucion":5
     }
+  },
+
+  {
+    "id":"Datebi",
+
+    "nombre":"Datebi Dokodaki",
+
+    "especialidad":"Luchadora",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Datebi.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":4,
+      "Agudeza":5,
+      "Cordura":1,
+      "Fuerza":10,
+      "Destreza":8,
+      "Constitucion":7
+    }
+  },
+
+  {
+    "id":"Taffytha",
+
+    "nombre":"Taffytha Difraise",
+
+    "especialidad":"Kendo",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Taffytha.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":5,
+      "Agudeza":8,
+      "Cordura":4,
+      "Fuerza":3,
+      "Destreza":10,
+      "Constitucion":5
+    }
+  },
+
+  {
+    "id":"Velvette",
+
+    "nombre":"Velvette Requiem",
+
+    "especialidad":"Cantante",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Velvette.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":10,
+      "Cordura":5,
+      "Fuerza":1,
+      "Destreza":5,
+      "Constitucion":6
+    }
+  },
+
+  {
+    "id":"Evelyn",
+
+    "nombre":"Evelyn Noctis",
+
+    "especialidad":"Esgrima",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Evelyn.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":5,
+      "Agudeza":0,
+      "Cordura":5,
+      "Fuerza":10,
+      "Destreza":7,
+      "Constitucion":8
+    }
   }
 ]
