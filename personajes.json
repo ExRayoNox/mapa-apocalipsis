@@ -422,5 +422,130 @@
       "Destreza":7,
       "Constitucion":8
     }
+  },
+
+  {
+    "id":"Gia",
+
+    "nombre":"Gia Shannon",
+
+    "especialidad":"Mecánica",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Gia.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":7,
+      "Agudeza":4,
+      "Cordura":5,
+      "Fuerza":6,
+      "Destreza":7,
+      "Constitucion":6
+    }
+  },
+
+  {
+    "id":"Umi",
+
+    "nombre":"Chiharu Umi",
+
+    "especialidad":"Mecatrónica",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Umi.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":10,
+      "Agudeza":5,
+      "Cordura":5,
+      "Fuerza":5,
+      "Destreza":5,
+      "Constitucion":5
+    }
+  },
+
+  {
+    "id":"Nova",
+
+    "nombre":"Tokito Nova",
+
+    "especialidad":"Cientifica",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Nova.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":5,
+      "Cordura":5,
+      "Fuerza":1,
+      "Destreza":10,
+      "Constitucion":6
+    }
+  },
+
+  {
+    "id":"Vladilena",
+
+    "nombre":"Vladilena Tsvietaieva",
+
+    "especialidad":"Piloto",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Vladilena.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":2,
+      "Agudeza":6,
+      "Cordura":3,
+      "Fuerza":8,
+      "Destreza":8,
+      "Constitucion":8
+    }
+  },
+
+  {
+    "id":"Arin",
+
+    "nombre":"Arin Noctis",
+
+    "especialidad":"Boticaria",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Arin.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":9,
+      "Agudeza":7,
+      "Cordura":6,
+      "Fuerza":1,
+      "Destreza":7,
+      "Constitucion":5
+    }
   }
 ]
