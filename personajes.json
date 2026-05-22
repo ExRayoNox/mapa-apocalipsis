@@ -75,6 +75,31 @@
   },
 
   {
+    "id":"Matthew",
+
+    "nombre":"Matthew",
+
+    "especialidad":"Inventor",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Matthew.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":6,
+      "Cordura":8,
+      "Fuerza":3,
+      "Destreza":5,
+      "Constitucion":5
+    }
+  },
+
+  {
     "id":"Damian",
 
     "nombre":"Damián Edwards",
