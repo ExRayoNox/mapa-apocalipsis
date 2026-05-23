@@ -342,8 +342,8 @@
     "stats":{
       "Inteligencia":4,
       "Agudeza":5,
-      "Cordura":10,
-      "Fuerza":6,
+      "Cordura":4,
+      "Fuerza":10,
       "Destreza":7,
       "Constitucion":5
     }
