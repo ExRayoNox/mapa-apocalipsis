@@ -572,5 +572,30 @@
       "Destreza":7,
       "Constitucion":5
     }
+  },
+
+  {
+    "id":"Mia",
+
+    "nombre":"Mia White",
+
+    "especialidad":"Gimnasia",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Mia.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":4,
+      "Agudeza":4,
+      "Cordura":5,
+      "Fuerza":6,
+      "Destreza":10,
+      "Constitucion":6
+    }
   }
 ]
