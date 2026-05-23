@@ -597,5 +597,80 @@
       "Destreza":10,
       "Constitucion":6
     }
-  }
+  },
+
+  {
+    "id":"Bayron",
+
+    "nombre":"Bayron Pizarro",
+
+    "especialidad":"Atleta",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Bayron.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":2,
+      "Agudeza":10,
+      "Cordura":4,
+      "Fuerza":3,
+      "Destreza":10,
+      "Constitucion":6
+    }
+  },
+
+  {
+    "id":"Kirsi",
+
+    "nombre":"Kirsi Korhonen",
+
+    "especialidad":"Atleta",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Kirsi.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":6,
+      "Agudeza":8,
+      "Cordura":5,
+      "Fuerza":4,
+      "Destreza":8,
+      "Constitucion":4
+    }
+  },
+
+  {
+    "id":"Kirsi",
+
+    "nombre":"Kirsi Korhonen",
+
+    "especialidad":"Atleta",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Kirsi.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":6,
+      "Agudeza":8,
+      "Cordura":5,
+      "Fuerza":4,
+      "Destreza":8,
+      "Constitucion":4
+    }
+  },
 ]
