@@ -672,5 +672,30 @@
       "Destreza":6,
       "Constitucion":2
     }
+  },
+
+  {
+    "id":"Katerina",
+
+    "nombre":"Katerina Vetrova",
+
+    "especialidad":"Seguridad Privada",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Katerina.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":5,
+      "Agudeza":4,
+      "Cordura":5,
+      "Fuerza":9,
+      "Destreza":4,
+      "Constitucion":8
+    }
   }
 ]
