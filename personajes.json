@@ -647,5 +647,30 @@
       "Destreza":8,
       "Constitucion":4
     }
+  },
+
+  {
+    "id":"Remy",
+
+    "nombre":"Remy Leclair",
+
+    "especialidad":"Diseñador de moda",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Remy.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":9,
+      "Cordura":7,
+      "Fuerza":3,
+      "Destreza":6,
+      "Constitucion":2
+    }
   }
 ]
