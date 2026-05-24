@@ -697,5 +697,30 @@
       "Destreza":4,
       "Constitucion":8
     }
+  },
+
+  {
+    "id":"Heathcliff",
+
+    "nombre":"Heathcliff Stone",
+
+    "especialidad":"Esgrimista/Kendo",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Heathcliff.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":3,
+      "Agudeza":6,
+      "Cordura":5,
+      "Fuerza":6,
+      "Destreza":8,
+      "Constitucion":7
+    }
   }
 ]
