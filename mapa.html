@@ -103,16 +103,12 @@ Volver
     Día 1
   </div>
 
-  <div id="hud-time">
-    00:00
-  </div>
-
   <div id="hud-weather">
     Cielo despejado
   </div>
 
   <div id="hud-cycle">
-    ☀️ Día
+    🌙 Noche
   </div>
 
 </div>
@@ -125,97 +121,24 @@ Volver
 
 <script>
 
-/* FECHA INICIO */
+/* ========================= */
+/* HUD MANUAL */
+/* ========================= */
 
-const inicio =
-new Date("2026-05-22T00:00:00");
+document
+.getElementById("hud-day")
+.innerText =
+"Día 1";
 
-/* ACTUALIZAR HUD */
+document
+.getElementById("hud-weather")
+.innerText =
+"Cielo despejado";
 
-function actualizarHUD(){
-
-  const ahora =
-  new Date();
-
-  /* HORA CHILE */
-
-  const chile =
-  new Date(
-
-    ahora.toLocaleString(
-      "en-US",
-      {
-        timeZone:
-        "America/Santiago"
-      }
-    )
-
-  );
-
-  /* HORA */
-
-  let horas =
-  chile.getHours()
-  .toString()
-  .padStart(2,"0");
-
-  let minutos =
-  chile.getMinutes()
-  .toString()
-  .padStart(2,"0");
-
-  document
-  .getElementById("hud-time")
-  .innerText =
-  `${horas}:${minutos}`;
-
-  /* DIA */
-
-  const diferencia =
-  chile - inicio;
-
-  const dias =
-  Math.floor(
-    diferencia /
-    (1000*60*60*24)
-  ) + 1;
-
-  document
-  .getElementById("hud-day")
-  .innerText =
-  `Día ${dias}`;
-
-  /* DIA/NOCHE */
-
-  if(horas >= 8 && horas < 20){
-
-    document
-    .getElementById("hud-cycle")
-    .innerText =
-    "☀️ Día";
-
-  }else{
-
-    document
-    .getElementById("hud-cycle")
-    .innerText =
-    "🌙 Noche";
-  }
-
-  /* CLIMA */
-
-  document
-  .getElementById("hud-weather")
-  .innerText =
-  "Cielo despejado";
-}
-
-actualizarHUD();
-
-setInterval(
-  actualizarHUD,
-  1000
-);
+document
+.getElementById("hud-cycle")
+.innerText =
+"🌙 Noche";
 
 /* ========================= */
 /* MAPA */
