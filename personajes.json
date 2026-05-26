@@ -722,5 +722,30 @@
       "Destreza":8,
       "Constitucion":7
     }
+  },
+
+  {
+    "id":"Juliette",
+
+    "nombre":"Juliette De Montmorency",
+
+    "especialidad":"Fuerzas Especiales",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Juliette.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":5,
+      "Agudeza":6,
+      "Cordura":4,
+      "Fuerza":7,
+      "Destreza":7,
+      "Constitucion":6
+    }
   }
 ]
