@@ -747,5 +747,30 @@
       "Destreza":7,
       "Constitucion":6
     }
+  },
+
+  {
+    "id":"Marlonetta",
+
+    "nombre":"Marlonetta Edevane",
+
+    "especialidad":"Toxinología",
+
+    "imagen":"https://raw.githubusercontent.com/ExRayoNox/mapa-apocalipsis/refs/heads/main/img/Marlonetta.png",
+
+    "vitalidad":100,
+
+    "sanidad":100,
+
+    "infeccion":0,
+
+    "stats":{
+      "Inteligencia":8,
+      "Agudeza":10,
+      "Cordura":7,
+      "Fuerza":2,
+      "Destreza":7,
+      "Constitucion":1
+    }
   }
 ]
