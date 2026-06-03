@@ -62,7 +62,7 @@
 
     "sanidad":100,
 
-    "infeccion":8,
+    "infeccion":2,
 
     "stats":{
       "Inteligencia":5,
@@ -312,7 +312,7 @@
 
     "sanidad":100,
 
-    "infeccion":0,
+    "infeccion":14,
 
     "stats":{
       "Inteligencia":8,
@@ -387,7 +387,7 @@
 
     "sanidad":100,
 
-    "infeccion":11,
+    "infeccion":10,
 
     "stats":{
       "Inteligencia":5,
@@ -437,7 +437,7 @@
 
     "sanidad":100,
 
-    "infeccion":6,
+    "infeccion":7,
 
     "stats":{
       "Inteligencia":5,
